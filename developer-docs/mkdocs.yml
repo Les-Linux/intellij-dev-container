@@ -1,0 +1,75 @@
+site_name: Dev-Container-Test
+site_description: "Intellij Dev-Container Test"
+repo_url: ""
+site_url: ""
+edit_uri: "blob/develop/docs/"
+repo_name: ""
+
+nav:
+  - Home: index.md
+
+# ==================================================================================================================================
+#   Ignore and do not change anything below this line, these are the standard settings that should be in place for our documentation
+# ==================================================================================================================================
+
+# ==================================================================================================================================
+# Setting up the basic NAT docs theme
+theme:
+  icon:
+    logo: fontawesome/brands/jenkins
+    repo: fontawesome/brands/github
+  name: material
+  palette:
+    - scheme: default
+      primary: blue
+      toggle:
+        icon: material/lightbulb-outline
+        name: Switch to dark mode
+    - scheme: slate
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/lightbulb
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - toc.follow
+    - toc.integrate
+    - navigation.tracking
+
+# ==================================================================================================================================
+# Setting up the basic plugins
+plugins:
+  - search
+  - autorefs
+  - mkdocstrings
+
+extra:
+  version:
+    provider: mike
+
+
+# ==================================================================================================================================
+# Setting up the required markdown extensions
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - abbr
+  - attr_list
+  - admonition
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.highlight
+  - pymdownx.progressbar
+  - pymdownx.smartsymbols
+  - pymdownx.snippets
+  - pymdownx.keys
+  - pymdownx.tilde
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg

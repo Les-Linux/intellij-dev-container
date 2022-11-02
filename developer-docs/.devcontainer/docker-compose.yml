@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  developer-docs:
+    image: developer-docs
+    container_name: developer-docs
+    hostname: developer-docs
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    user: vscode
+    volumes:
+      - ~/.ssh:/home/vscode/.ssh:ro
+      - ~/.gnupg:/home/vscode/.gnupg
+      - ..:/app
+    env_file:
+      - devcontainer.env
+    command: sleep infinity
